@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeiro Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#inicio">primeiro<span>-site</span>.html</a>
+    <nav aria-label="Principal">
+      <a href="#camadas">Camadas</a>
+      <a href="#tarefas">Tarefas</a>
+      <a href="#contato">Contato</a>
+      <button class="btn" id="tema" type="button" aria-pressed="false">Tema escuro</button>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <div class="hero">
+      <p class="label" id="saudacao">Olá</p>
+      <h1>Um site simples, feito em <em>três camadas</em>.</h1>
+      <p class="lead">Esta página usa HTML para a estrutura, CSS para o visual e JavaScript para o comportamento. Troque o tema, monte uma lista de tarefas e teste o formulário.</p>
+      <div class="row">
+        <a class="btn primary" href="#tarefas" style="text-decoration:none">Experimentar</a>
+        <span class="clock" id="relogio" aria-live="off"></span>
+      </div>
+    </div>
+
+    <section id="camadas">
+      <div class="sec-head">
+        <p class="label">O que cada arquivo faz</p>
+        <h2>HTML, CSS e JavaScript</h2>
+        <p>Cada tecnologia cuida de uma parte. Os trechos abaixo vêm desta própria página.</p>
+      </div>
+      <div class="layers">
+        <article class="layer">
+          <p class="label">Estrutura</p>
+          <h3>HTML</h3>
+          <p>Define o que existe na página: títulos, textos, botões e campos.</p>
+<pre>&lt;button id="tema"&gt;
+  Tema escuro
+&lt;/button&gt;</pre>
+        </article>
+        <article class="layer">
+          <p class="label">Aparência</p>
+          <h3>CSS</h3>
+          <p>Define cores, fontes e espaços. As cores ficam em variáveis, o que permite trocar de tema.</p>
+<pre>:root {
+  --accent: #2b46f0;
+}
+.btn.primary {
+  background: var(--accent);
+}</pre>
+        </article>
+        <article class="layer">
+          <p class="label">Comportamento</p>
+          <h3>JavaScript</h3>
+          <p>Reage a cliques e digitação: adiciona tarefas, valida o formulário e atualiza o relógio.</p>
+<pre>botao.addEventListener(
+  "click",
+  alternarTema
+);</pre>
+        </article>
+      </div>
+    </section>
+
+    <section id="tarefas">
+      <div class="sec-head">
+        <p class="label">Demo de JavaScript</p>
+        <h2>Lista de tarefas</h2>
+        <p>Adicione, marque e remova itens. A lista fica salva neste navegador.</p>
+      </div>
+      <div class="demo">
+        <form class="add" id="form-tarefa" novalidate>
+          <input id="nova-tarefa" type="text" placeholder="Nova tarefa" aria-label="Nova tarefa" autocomplete="off">
+          <button class="btn primary" type="submit">Adicionar</button>
+        </form>
+        <ul class="tasks" id="lista"></ul>
+        <p class="count" id="contagem"></p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="sec-head">
+        <p class="label">Demo de formulário</p>
+        <h2>Fale comigo</h2>
+        <p>O JavaScript confere os campos antes de aceitar. Este exemplo não envia os dados para lugar nenhum.</p>
+      </div>
+      <div class="demo">
+        <form id="form-contato" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" autocomplete="name">
+            <p class="err" id="erro-nome"></p>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" autocomplete="email">
+            <p class="err" id="erro-email"></p>
+          </div>
+          <div class="field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem"></textarea>
+            <p class="err" id="erro-mensagem"></p>
+          </div>
+          <div>
+            <button class="btn primary" type="submit">Enviar</button>
+          </div>
+          <p class="status" id="status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Feito com HTML, CSS e JavaScript.</span>
+    <a href="#inicio">Voltar ao topo</a>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

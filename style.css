@@ -1,0 +1,180 @@
+/* Reset básico */
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+}
+
+  /* Layout: coluna única de leitura, cabeçalho fixo no topo, três camadas (HTML, CSS, JS) em grade, depois duas demos interativas. */
+  :root {
+    --bg: #f2f5f3;
+    --surface: #ffffff;
+    --ink: #14201c;
+    --muted: #51605a;
+    --line: #d5dcd8;
+    --soft: #e4e9e6;
+    --accent: #2b46f0;
+    --accent-ink: #ffffff;
+    --ok: #1a7f4b;
+    --err: #b42318;
+    --font-display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1512;
+      --surface: #16201c;
+      --ink: #e8efeb;
+      --muted: #9aa9a2;
+      --line: #2a3832;
+      --soft: #1d2a25;
+      --accent: #8aa0ff;
+      --accent-ink: #0e1512;
+      --ok: #5fd08f;
+      --err: #ff8a7d;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1512;
+    --surface: #16201c;
+    --ink: #e8efeb;
+    --muted: #9aa9a2;
+    --line: #2a3832;
+    --soft: #1d2a25;
+    --accent: #8aa0ff;
+    --accent-ink: #0e1512;
+    --ok: #5fd08f;
+    --err: #ff8a7d;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    padding-inline: 20px;
+  }
+  .wrap { max-width: 960px; margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Cabeçalho */
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .logo { font-family: var(--font-mono); font-size: 0.95rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  nav { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 22px; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+  nav a:hover { color: var(--accent); }
+  .btn {
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--soft); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { filter: brightness(1.08); background: var(--accent); }
+
+  /* Abertura */
+  .hero { padding-block: 72px 56px; display: grid; gap: 22px; }
+  .hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); font-weight: 800; letter-spacing: -0.02em; max-width: 14ch; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 52ch; }
+  .hero .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .clock { font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); }
+
+  section { padding-block: 40px; }
+  .sec-head { display: grid; gap: 8px; margin-bottom: 24px; }
+  .sec-head h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 800; letter-spacing: -0.01em; }
+  .sec-head p { color: var(--muted); max-width: 56ch; }
+
+  /* Três camadas */
+  .layers { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .layer { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .layer h3 { font-size: 1.35rem; font-weight: 600; }
+  .layer p { color: var(--muted); font-size: 0.97rem; }
+  pre {
+    margin: 0;
+    background: var(--soft);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.55;
+    overflow-x: auto;
+    color: var(--ink);
+  }
+
+  /* Demos */
+  .demo { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 18px; min-width: 0; }
+  .add { display: flex; flex-wrap: wrap; gap: 10px; }
+  .add input { flex: 1 1 200px; min-width: 0; }
+  input, textarea {
+    font: inherit;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+  }
+  input:focus, textarea:focus { border-color: var(--accent); }
+  textarea { min-height: 110px; resize: vertical; }
+  .tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .tasks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg);
+  }
+  .tasks input[type="checkbox"] { width: 20px; height: 20px; flex: none; accent-color: var(--accent); }
+  .tasks .txt { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+  .tasks li.done .txt { text-decoration: line-through; color: var(--muted); }
+  .tasks .rm { font: inherit; border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+  .tasks .rm:hover { color: var(--err); background: var(--soft); }
+  .count { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  form { display: grid; gap: 16px; }
+  .field { display: grid; gap: 6px; }
+  .field label { font-weight: 700; font-size: 0.95rem; }
+  .err { color: var(--err); font-size: 0.88rem; min-height: 1.2em; }
+  .status { font-weight: 500; }
+  .status.ok { color: var(--ok); }
+
+  footer { padding-block: 40px 56px; border-top: 1px solid var(--line); margin-top: 32px; color: var(--muted); font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
