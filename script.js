@@ -51,15 +51,14 @@
       var temaSalvo = this.safeStorage.get("tema");
       if (temaSalvo === "dark" || temaSalvo === "light") {
         this.elements.root.setAttribute("data-theme", temaSalvo);
+      } else {
+        this.elements.root.setAttribute("data-theme", "light");
       }
       this.updateThemeButton();
     },
 
     isDarkTheme: function () {
-      var tema = this.elements.root.getAttribute("data-theme");
-      if (tema === "dark") return true;
-      if (tema === "light") return false;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return this.elements.root.getAttribute("data-theme") === "dark";
     },
 
     updateThemeButton: function () {
