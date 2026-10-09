@@ -1,130 +1,140 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Geração de Primeira</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geração de Primeira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="logo" href="#inicio">Geração de <span>Primeira</span>.html</a>
+        <nav aria-label="Principal">
+          <a href="#camadas">Camadas</a>
+          <a href="#tarefas">Tarefas</a>
+          <a href="#contato">Contato</a>
+          <button class="btn" id="tema" type="button" aria-pressed="false">Tema escuro</button>
+        </nav>
+      </header>
 
-<div class="wrap">
-  <header class="top">
-    <a class="logo" href="#inicio">Geração de <span>Primeira</span>.html</a>
-    <nav aria-label="Principal">
-      <a href="#camadas">Camadas</a>
-      <a href="#tarefas">Tarefas</a>
-      <a href="#contato">Contato</a>
-      <button class="btn" id="tema" type="button" aria-pressed="false">Tema escuro</button>
-    </nav>
-  </header>
+      <main id="inicio">
+        <section class="hero" aria-labelledby="titulo-principal">
+          <p class="label" id="saudacao">Olá</p>
+          <h1 id="titulo-principal">Sua inscrição para as nossas atividades de <em>forma simplificada</em>.</h1>
+          <p class="lead">Esta página foi idealizada para centralizar os eventos do Ministério de Adolescentes da Primeira Igreja Batista do Recife em um único lugar, deixando o acesso às atividades mais simples e organizado.</p>
+          <div class="row">
+            <a class="btn primary" href="#tarefas">Experimentar</a>
+            <span class="clock" id="relogio" aria-live="polite"></span>
+          </div>
+        </section>
 
-  <main id="inicio">
-    <div class="hero">
-      <p class="label" id="saudacao">Olá</p>
-      <h1>Sua inscrição para as nossas atividades de <em>forma simplificada</em>.</h1>
-      <p class="lead">Esta página foi idealizada para que todos os eventos do Ministério de Adolescentes da Primeira Igreja Batista do Recife estejam centralizados em um úinico lugar!
-        Deixando, assim, o acesso facilitado para as atividades do Ministério!</p>
-      <div class="row">
-        <a class="btn primary" href="#tarefas" style="text-decoration:none">Experimentar</a>
-        <span class="clock" id="relogio" aria-live="off"></span>
-      </div>
+        <section id="camadas">
+          <div class="sec-head">
+            <p class="label">O que o site faz</p>
+            <h2>Acampamento, Acampadentro e Redes Externas</h2>
+            <p>Cada evento acontece de forma diferente. As descrições seguem em cada cartão.</p>
+          </div>
+
+          <div class="layers">
+            <article class="layer">
+              <p class="label">Acampamento</p>
+              <h3>Acamp</h3>
+              <p>Evento mais aguardado pelos adolescentes.</p>
+              <pre>Tem como objetivo integrar os adolescentes com um final de semana edificante.
+Te increve pra saber!</pre>
+            </article>
+
+            <article class="layer">
+              <p class="label">Acampadentro</p>
+              <h3>Acampadentro</h3>
+              <p>É a preparação e a simulação do que acontecerá no acampamento.</p>
+              <pre>É o que antecede o Acamp!
+É uma breve simulação do que acontecerá no acampamento.</pre>
+            </article>
+
+            <article class="layer">
+              <p class="label">Redes Externas</p>
+              <h3>Redes Externas</h3>
+              <p>São encontros de integração e edificação fora do templo.</p>
+              <pre>São as redes que acontecem fora do templo da igreja!
+Acontecem momentos de integração e edificação através da Palavra.</pre>
+            </article>
+          </div>
+        </section>
+
+        <section id="tarefas">
+          <div class="sec-head">
+            <p class="label">Demo de JavaScript</p>
+            <h2>Lista de tarefas</h2>
+            <p>Adicione, marque e remova itens. A lista fica salva neste navegador.</p>
+          </div>
+
+          <div class="demo">
+            <form class="add" id="form-tarefa" novalidate>
+              <input id="nova-tarefa" type="text" placeholder="Nova tarefa" aria-label="Nova tarefa" autocomplete="off">
+              <button class="btn primary" type="submit">Adicionar</button>
+            </form>
+
+            <ul class="tasks" id="lista"></ul>
+            <p class="count" id="contagem"></p>
+          </div>
+        </section>
+
+        <section id="contato">
+          <div class="sec-head">
+            <p class="label">Checklist do acampamento</p>
+            <h2>Entre em contato conosco!</h2>
+            <p>O JavaScript valida os campos antes de aceitar. Este exemplo não envia os dados para lugar nenhum.</p>
+          </div>
+
+          <div class="demo">
+            <form id="form-contato" novalidate>
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" autocomplete="name">
+                <p class="err" id="erro-nome"></p>
+              </div>
+
+              <div class="field">
+                <label for="igreja">Igreja</label>
+                <input id="igreja" type="text" autocomplete="organization">
+                <p class="err" id="erro-igreja"></p>
+              </div>
+
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" autocomplete="email">
+                <p class="err" id="erro-email"></p>
+              </div>
+
+              <div class="field">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem"></textarea>
+                <p class="err" id="erro-mensagem"></p>
+              </div>
+
+              <div>
+                <button class="btn primary" type="submit">Enviar</button>
+              </div>
+
+              <p class="status" id="status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>Feito por Damasceno e Moraes.</span>
+        <a link href="https://linkedin.com/in/john-damasceno">LinkedIn -  Damasceno</a>
+        <a link href="https://linkedin.com/in/levi-moraes">LinkedIn -  Moraes</a>
+        <a href="#inicio">Voltar ao topo</a>
+      </footer>
     </div>
 
-    <section id="camadas">
-      <div class="sec-head">
-        <p class="label">O que o site faz</p>
-        <h2>Acampamento, Acampadentro, Redes Externas</h2>
-        <p>Cada evento acontece de forma diferente. As descrições seguem em cada balão.</p>
-      </div>
-      <div class="layers">
-        <article class="layer">
-          <p class="label">Acampamento</p>
-          <h3>Acamp</h3>
-          <p>Evento mais aguardado pelos adolescentes!</p>
-<pre>Tem como objetivo integrar os adolescentes com um final de semana edificante.
-  Te increve pra saber!<pre>
-        </article>
-        <article class="layer">
-          <p class="label">Acampadentro</p>
-          <h3>Acampadentro/h3>
-          <p>Define cores, fontes e espaços. As cores ficam em variáveis, o que permite trocar de tema.</p>
-<pre>É o que antecede o Acamp! 
-  É uma breve simulação do que acontecerá no acampamento!</pre>
-        </article>
-        <article class="layer">
-          <p class="label">Redes Externas</p>
-          <h3>Redes Externas</h3>
-          <p>Não menos importante, as Redes Externas!</p>
-<pre>São as redes que acontecem fora do templo da igreja!
-  Acontecem momentos de integração e edificação através da Palavra!</pre>
-        </article>
-      </div>
-    </section>
-
-    <section id="tarefas">
-      <div class="sec-head">
-        <p class="label">Demo de JavaScript</p>
-        <h2>Lista de tarefas</h2>
-        <p>Adicione, marque e remova itens. A lista fica salva neste navegador.</p>
-      </div>
-      <div class="demo">
-        <form class="add" id="form-tarefa" novalidate>
-          <input id="nova-tarefa" type="text" placeholder="Nova tarefa" aria-label="Nova tarefa" autocomplete="off">
-          <button class="btn primary" type="submit">Adicionar</button>
-        </form>
-        <ul class="tasks" id="lista"></ul>
-        <p class="count" id="contagem"></p>
-      </div>
-    </section>
-
-    <section id="contato">
-      <div class="sec-head">
-        <p class="label">CheckList para o Acampamento:</p>
-        <h2>Entre em contato conosco!</h2>
-        <p>O JavaScript confere os campos antes de aceitar. Este exemplo não envia os dados para lugar nenhum.</p>
-      </div>
-      <div class="demo">
-        <form id="form-contato" novalidate>
-          <div class="field">
-            <label for="nome">Nome</label>
-            <input id="nome" type="text" autocomplete="name">
-            <p class="err" id="erro-nome"></p>
-          </div>
-           <div class="field">
-            <label for="igreja>Igreja</label>
-            <input id="igreja" type="text" autocomplete="igreja">
-            <p class="err" id="erro-igreja"></p>
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input id="email" type="email" autocomplete="email">
-            <p class="err" id="erro-email"></p>
-          </div>
-          <div class="field">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem"></textarea>
-            <p class="err" id="erro-mensagem"></p>
-          </div>
-          <div>
-            <button class="btn primary" type="submit">Enviar</button>
-          </div>
-          <p class="status" id="status" role="status"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>Feito com HTML, CSS e JavaScript.</span>
-    <a href="#inicio">Voltar ao topo</a>
-  </footer>
-</div>
-
-<script src="script.js"></script>
-
-</body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
